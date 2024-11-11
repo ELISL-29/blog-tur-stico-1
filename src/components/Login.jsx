@@ -10,8 +10,9 @@ export const Login = () => {
     const correo = event.target.elements.correo.value
     const pass = event.target.elements.password.value
 
-    const response = await fetch('https://6622071827fcd16fa6c8818c.mockapi.io/api/v1/users')
+    const response = await fetch('https://673271fc2a1b1a4ae10ff8cd.mockapi.io/user')
     const users = await response.json()
+    console.log(users)
 
     const user = users.find(user => user.email === correo && user.password === pass)
     
@@ -37,7 +38,8 @@ export const Login = () => {
             <input name="password" type="password" placeholder="***********" required/>
             </label>
         </fieldset>
-        <button>Enviar</button>
+        <button>Iniciar Sesión</button>
+        <button type="button" onClick={() => navigate('/register')}>Registrarse</button>
       </form>
     </main>
   )
