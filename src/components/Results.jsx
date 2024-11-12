@@ -32,37 +32,47 @@ export const Results = () => {
   };
 
   return (
-    <main className="results">
-      <button className="create-blog-button" onClick={() => navigate('/create-blog')}>
-        Crear Blog
-      </button>
-      <table>
-        <thead>
-          <tr>
-            <th>Nombre</th>
-            <th>Ubicación</th>
-            <th>Reseña</th>
-            <th>Calificación</th>
-            <th>Imagen</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          {locations.map((location) => (
-            <tr key={location.id}>
-              <td>{location.name}</td>
-              <td>{location.location}</td>
-              <td>{location.review}</td>
-              <td>{location.rating}</td>
-              <td><img src={location.imageUrl} alt={location.name} style={{ width: '100px', height: '100px' }} /></td>
-              <td>
-                <button onClick={() => navigate(`/edit-blog/${location.id}`)}>Editar</button>
-                <button onClick={() => handleDelete(location.id)}>Eliminar</button>
-              </td>
+    <div className="container">
+      <div className="results">
+        <button className="create-blog-button" onClick={() => navigate('/create-blog')}>
+          Crear Blog
+        </button>
+        <table>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Ubicación</th>
+              <th>Reseña</th>
+              <th>Calificación</th>
+              <th>Imagen</th>
+              <th>Acciones</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
-    </main>
+          </thead>
+          <tbody>
+            {locations.length === 0 ? (
+              Array.from({ length: 5 }).map((_, index) => (
+                <tr key={index}>
+                  <td colSpan="6" className="empty-row"></td>
+                </tr>
+              ))
+            ) : (
+              locations.map((location) => (
+                <tr key={location.id}>
+                  <td>{location.name}</td>
+                  <td>{location.location}</td>
+                  <td>{location.review}</td>
+                  <td>{location.rating}</td>
+                  <td><img src={location.imageUrl} alt={location.name} style={{ width: '100px', height: '100px' }} /></td>
+                  <td>
+                    <button onClick={() => navigate(`/edit-blog/${location.id}`)}>Editar</button>
+                    <button onClick={() => handleDelete(location.id)}>Eliminar</button>
+                  </td>
+                </tr>
+              ))
+            )}
+          </tbody>
+        </table>
+      </div>
+    </div>
   );
 };

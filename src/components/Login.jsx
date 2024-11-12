@@ -1,46 +1,52 @@
-import { useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { useState } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import '../styles/styles.css';
 
 export const Login = () => {
-  const navigate = useNavigate()
-  const [error, setError] = useState(false)
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
-  const submit = async (event) => {
-    event.preventDefault()
-    const correo = event.target.elements.correo.value
-    const pass = event.target.elements.password.value
-
-    const response = await fetch('https://673271fc2a1b1a4ae10ff8cd.mockapi.io/user')
-    const users = await response.json()
-    console.log(users)
-
-    const user = users.find(user => user.email === correo && user.password === pass)
-    
-    if (user) {
-      navigate('/results')
-    } else {
-      setError(true)
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.post('https://673271fc2a1b1a4ae10ff8cd.mockapi.io/user', { email, password });
+      alert('Inicio de sesión exitoso');
+      navigate('/results'); // Redireccionar a la página de resultados
+    } catch (error) {
+      console.error('Error iniciando sesión:', error);
+      alert('Error iniciando sesión');
     }
-  }
+  };
 
   return (
-    <main className="login">
-      <form onSubmit={submit}>
-        <h1>Inicia sesión</h1>
-        {error ? 'Las credenciales son incorrectas':null}
-        <fieldset>
-          <label>
-            <span>Correo</span>
-            <input name="correo" type="email" placeholder="johndoe@email.com" required/>
-            </label>
-          <label>
-            <span>Contraseña</span>
-            <input name="password" type="password" placeholder="***********" required/>
-            </label>
-        </fieldset>
-        <button>Iniciar Sesión</button>
+    <div className="container">
+      <form onSubmit={handleLogin}>
+        <h1>Iniciar Sesión</h1>
+        <div className="form-group">
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="password">Contraseña</label>
+          <input
+            type="password"
+            id="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+        </div>
+        <button type="submit">Iniciar Sesión</button>
         <button type="button" onClick={() => navigate('/register')}>Registrarse</button>
       </form>
-    </main>
-  )
-}
+    </div>
+  );
+};

@@ -12,9 +12,9 @@ export const Register = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('https://673271fc2a1b1a4ae10ff8cd.mockapi.io/user', { name, email, password, createdAt: new Date().toString  });
+      await axios.post('https://673271fc2a1b1a4ae10ff8cd.mockapi.io/user', { name, email, password });
       alert('Usuario registrado exitosamente');
-      navigate('/results');
+      navigate('/');
     } catch (error) {
       console.error('Error registrando usuario:', error);
       alert('Error registrando usuario');
@@ -22,7 +22,7 @@ export const Register = () => {
   };
 
   return (
-    <div className="register">
+    <div className="container">
       <form onSubmit={handleRegister}>
         <h1>Registro</h1>
         <div className="form-group">
@@ -59,4 +59,4 @@ export const Register = () => {
       </form>
     </div>
   );
-}
+};

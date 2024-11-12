@@ -25,7 +25,7 @@ export const CreateBlog = () => {
   };
 
   return (
-    <div className="create-blog">
+    <div className="container">
       <form onSubmit={handleCreateBlog}>
         <h1>Crear Blog Turístico</h1>
         <div className="form-group">

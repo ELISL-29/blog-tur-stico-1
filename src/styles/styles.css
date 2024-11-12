@@ -1,19 +1,19 @@
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 html {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #eea4a48b; /* Fondo claro */
 }
 
-.login {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.register {
+.container {
   height: 100vh;
   display: flex;
   align-items: center;
@@ -21,57 +21,31 @@ html {
 }
 
 form {
-  border-radius: 20px;
-  border: 1px solid;
-  padding: 30px;
-  box-shadow: 0px 0px 10px 0px rgba(255,255,255,1);
-  background-color: #121111;
-}
-
-h1 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-fieldset {
-  border: none;
-  outline: none;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
-
-label {
-  display: flex;
-  flex-direction: column;
-  color: #f2eeee;
-}
-
-input {
+  background-color: #333; /* Fondo oscuro para el formulario */
+  color: #fff; /* Texto claro */
   border-radius: 10px;
-  padding: 10px;
-}
-
-.form-group {
-  margin-bottom: 15px;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 5px;
-}
-
-.form-group input {
+  padding: 30px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
   width: 100%;
-  padding: 8px;
-  box-sizing: border-box;
-  border-radius: 5px;
-  border: 1px solid #2a2323;
+  max-width: 600px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 }
 
-button {
+.results {
+  background-color: #333; /* Fondo oscuro para el contenedor de resultados */
+  color: #fff; /* Texto claro */
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
   width: 100%;
-  padding: 10px;
+  max-width: 800px;
+}
+
+.create-blog-button {
+  margin-bottom: 20px;
+  padding: 10px 20px;
   border: none;
   border-radius: 5px;
   background-color: #007bff;
@@ -80,42 +54,8 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.create-blog-button:hover {
   background-color: #0056b3;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 20px 0;
-  font-size: 16px;
-  text-align: left;
-}
-
-th, td {
-  padding: 12px 15px;
-  border: 1px solid #ddd;
-}
-
-thead {
-  background-color: #f4f4f4;
-}
-
-th {
-  background-color: #222;
-  color: white;
-}
-
-tr:nth-child(even) {
-  background-color: #f9f9f948;
-}
-
-tr:hover {
-  background-color: #f9f9f948;
-}
-
-.results {
-  padding: 20px;
 }
 
 table {
@@ -131,62 +71,134 @@ th, td {
 }
 
 th {
-  background-color: #f4f4f4;
+  background-color: #444; /* Fondo oscuro para los encabezados de la tabla */
 }
 
 tbody tr:nth-child(even) {
-  background-color: #f9f9f9;
-}
-
-.create-blog {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-form {
-  border-radius: 20px;
-  border: 1px solid;
-  padding: 30px;
-  box-shadow: 0px 0px 10px 0px rgba(255,255,255,1);
-  background-color: #fff;
+  background-color: #555; /* Fondo oscuro para las filas pares */
 }
 
 h1 {
   text-align: center;
   margin-bottom: 20px;
+  grid-column: span 2;
 }
 
 .form-group {
-  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
 }
 
 .form-group label {
-  display: block;
   margin-bottom: 5px;
 }
 
 .form-group input,
 .form-group textarea {
-  width: 100%;
-  padding: 8px;
+  padding: 10px;
   box-sizing: border-box;
   border-radius: 5px;
   border: 1px solid #ccc;
+  background-color: #f3e7e7; /* Fondo oscuro para los campos de entrada */
+  color: #0f0f0f; /* Texto claro */
 }
-
+s
 button {
-  width: 100%;
-  padding: 10px;
+  margin-right: 10px;
+  padding: 5px 10px;  :root {
+    color-scheme: light;
+  }
+  
+  html {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #f0f0f0; /* Fondo claro */
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .header {
+    background-color: #333; /* Fondo oscuro para el encabezado */
+    color: #fff; /* Texto claro */
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .container {
+    height: calc(100vh - 80px); /* Ajustar la altura para el encabezado */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  form {
+    background-color: #333; /* Fondo oscuro para el formulario */
+    color: #fff; /* Texto claro */
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #444; /* Fondo oscuro para los campos de entrada */
+    color: #fff; /* Texto claro */
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
   border: none;
   border-radius: 5px;
   background-color: #007bff;
-  color: white;
-  font-size: 16px;
+  color: rgb(18, 18, 18);
+  font-size: 14px;
   cursor: pointer;
 }
 
 button:hover {
   background-color: #0056b3;
+}
+
+button:last-child {
+  background-color: #dc3545;
+}
+
+button:last-child:hover {
+  background-color: #c82333;
 }

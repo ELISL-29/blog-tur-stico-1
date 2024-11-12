@@ -43,7 +43,7 @@ export const EditBlog = () => {
   };
 
   return (
-    <div className="edit-blog">
+    <div className="container">
       <form onSubmit={handleEditBlog}>
         <h1>Editar Blog Turístico</h1>
         <div className="form-group">
