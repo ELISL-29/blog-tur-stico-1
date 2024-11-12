@@ -2,8 +2,8 @@ import { createBrowserRouter } from "react-router-dom";
 import { Login } from "../components/Login";
 import { Results } from "../components/Results";
 import { Register } from "../components/Register";
-import { CreateBlog } from "../components/CreateBlog";
-import { EditBlog } from "../components/EditBlog";
+import { CreateDestination } from "../components/CreateDestination";
+import { EditDestination } from "../components/EditDestination";
 
 export const router = createBrowserRouter([
   {
@@ -19,12 +19,12 @@ export const router = createBrowserRouter([
     Component: Register
   },
   {
-    path: '/create-blog',
-    Component: CreateBlog
+    path: '/create-destination',
+    Component: CreateDestination
   },
   {
-    path: '/edit-blog/:id',
-    Component: EditBlog
+    path: '/edit-destination/:id',
+    Component: EditDestination
   }
 
 ]);

@@ -3,7 +3,7 @@ import axios from 'axios';
 import '../styles/styles.css';
 import { useNavigate } from 'react-router-dom';
 
-export const CreateBlog = () => {
+export const CreateDestination = () => {
   const [name, setName] = useState('');
   const [location, setLocation] = useState('');
   const [review, setReview] = useState('');
@@ -12,22 +12,22 @@ export const CreateBlog = () => {
 
   const navigate = useNavigate();
 
-  const handleCreateBlog = async (e) => {
+  const handleCreateDestination = async (e) => {
     e.preventDefault();
     try {
       await axios.post('https://673271fc2a1b1a4ae10ff8cd.mockapi.io/blog', { name, location, review, rating, image });
-      alert('Blog creado exitosamente');
+      alert('Destination creado exitosamente');
       navigate('/Results');
     } catch (error) {
-      console.error('Error creando el blog:', error);
-      alert('Error creando el blog');
+      console.error('Error creando el Destination:', error);
+      alert('Error creando el Destination');
     }
   };
 
   return (
     <div className="container">
-      <form onSubmit={handleCreateBlog}>
-        <h1>Crear Blog Turístico</h1>
+      <form onSubmit={handleCreateDestination}>
+        <h1>Crear Destino Turístico</h1>
         <div className="form-group">
           <label htmlFor="name">Nombre</label>
           <input

@@ -13,7 +13,7 @@ export const Results = () => {
         const response = await axios.get('https://673271fc2a1b1a4ae10ff8cd.mockapi.io/blog');
         setLocations(response.data);
       } catch (error) {
-        console.error('Error fetching blogs:', error);
+        console.error('Error fetching destinations:', error);
       }
     };
 
@@ -24,18 +24,18 @@ export const Results = () => {
     try {
       await axios.delete(`https://673271fc2a1b1a4ae10ff8cd.mockapi.io/blog/${id}`);
       setLocations(locations.filter(location => location.id !== id));
-      alert('Blog eliminado exitosamente');
+      alert('Destino eliminado exitosamente');
     } catch (error) {
-      console.error('Error eliminando el blog:', error);
-      alert('Error eliminando el blog');
+      console.error('Error eliminando el destino:', error);
+      alert('Error eliminando el destino');
     }
   };
 
   return (
     <div className="container">
       <div className="results">
-        <button className="create-blog-button" onClick={() => navigate('/create-blog')}>
-          Crear Blog
+        <button className="create-blog-button" onClick={() => navigate('/create-destination')}>
+          Crear Destino
         </button>
         <table>
           <thead>
@@ -64,7 +64,7 @@ export const Results = () => {
                   <td>{location.rating}</td>
                   <td><img src={location.imageUrl} alt={location.name} style={{ width: '100px', height: '100px' }} /></td>
                   <td>
-                    <button onClick={() => navigate(`/edit-blog/${location.id}`)}>Editar</button>
+                    <button onClick={() => navigate(`/edit-destination/${location.id}`)}>Editar</button>
                     <button onClick={() => handleDelete(location.id)}>Eliminar</button>
                   </td>
                 </tr>
