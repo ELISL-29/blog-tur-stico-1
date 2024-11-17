@@ -9,8 +9,10 @@ export const Results = () => {
 
   useEffect(() => {
     const fetchBlogs = async () => {
+      const user = JSON.parse(localStorage.getItem('user')); // Obtener el usuario de la sesión
+
       try {
-        const response = await axios.get('https://673271fc2a1b1a4ae10ff8cd.mockapi.io/blog');
+        const response = await axios.get(`https://673a385d339a4ce44517975b.mockapi.io/destinations?userId=${user.id}`);
         setLocations(response.data);
       } catch (error) {
         console.error('Error fetching destinations:', error);
@@ -22,7 +24,7 @@ export const Results = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`https://673271fc2a1b1a4ae10ff8cd.mockapi.io/blog/${id}`);
+      await axios.delete(`https://673271fc2a1b1a4ae10ff8cd.mockapi.io/destinations/${id}`);
       setLocations(locations.filter(location => location.id !== id));
       alert('Destino eliminado exitosamente');
     } catch (error) {
@@ -44,7 +46,6 @@ export const Results = () => {
               <th>Ubicación</th>
               <th>Reseña</th>
               <th>Calificación</th>
-              <th>Imagen</th>
               <th>Acciones</th>
             </tr>
           </thead>
@@ -62,7 +63,6 @@ export const Results = () => {
                   <td>{location.location}</td>
                   <td>{location.review}</td>
                   <td>{location.rating}</td>
-                  <td><img src={location.imageUrl} alt={location.name} style={{ width: '100px', height: '100px' }} /></td>
                   <td>
                     <button onClick={() => navigate(`/edit-destination/${location.id}`)}>Editar</button>
                     <button onClick={() => handleDelete(location.id)}>Eliminar</button>

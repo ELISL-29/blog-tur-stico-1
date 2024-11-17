@@ -15,7 +15,7 @@ export const EditDestination = () => {
   useEffect(() => {
     const fetchDestination = async () => {
       try {
-        const response = await axios.get(`https://673271fc2a1b1a4ae10ff8cd.mockapi.io/blog/${id}`);
+        const response = await axios.get(`https://673a385d339a4ce44517975b.mockapi.io/destinations/${id}`);
         const destination = response.data;
         setName(destination.name);
         setLocation(destination.location);
@@ -23,7 +23,7 @@ export const EditDestination = () => {
         setRating(destination.rating);
         setImage(destination.image);
       } catch (error) {
-        console.error('Error fetching destination:', error);
+        console.error('Error consultando los destinos:', error);
       }
     };
 
@@ -33,7 +33,7 @@ export const EditDestination = () => {
   const handleEditDestination = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`https://673271fc2a1b1a4ae10ff8cd.mockapi.io/blog/${id}`, { name, location, review, rating, image });
+      await axios.put(`https://673a385d339a4ce44517975b.mockapi.io/destinations/${id}`, { name, location, review, rating, image });
       alert('Destino actualizado exitosamente');
       navigate('/results');
     } catch (error) {

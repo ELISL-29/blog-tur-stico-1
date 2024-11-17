@@ -12,7 +12,7 @@ export const Register = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('https://673271fc2a1b1a4ae10ff8cd.mockapi.io/user', { name, email, password });
+      await axios.post('https://673a385d339a4ce44517975b.mockapi.io/users', { name, email, password });
       alert('Usuario registrado exitosamente');
       navigate('/');
     } catch (error) {

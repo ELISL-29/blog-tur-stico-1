@@ -8,19 +8,19 @@ export const CreateDestination = () => {
   const [location, setLocation] = useState('');
   const [review, setReview] = useState('');
   const [rating, setRating] = useState('');
-  const [image, setImage] = useState('');
-
+ 
   const navigate = useNavigate();
 
   const handleCreateDestination = async (e) => {
     e.preventDefault();
+    const user = JSON.parse(localStorage.getItem('user'));
     try {
-      await axios.post('https://673271fc2a1b1a4ae10ff8cd.mockapi.io/blog', { name, location, review, rating, image });
-      alert('Destination creado exitosamente');
+      await axios.post('https://673a385d339a4ce44517975b.mockapi.io/destinations', { name, location, review, rating, userId: user.id });
+      alert('Destino creado exitosamente');
       navigate('/Results');
     } catch (error) {
-      console.error('Error creando el Destination:', error);
-      alert('Error creando el Destination');
+      console.error('Error creando el Destino:', error);
+      alert('Error creando el Destino');
     }
   };
 
@@ -67,16 +67,6 @@ export const CreateDestination = () => {
             required
             min="1"
             max="5"
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="image">Imagen</label>
-          <input
-            type="text"
-            id="image"
-            value={image}
-            onChange={(e) => setImage(e.target.value)}
-            required
           />
         </div>
         <button type="submit">Crear Blog</button>
