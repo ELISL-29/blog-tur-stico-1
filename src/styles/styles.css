@@ -55,6 +55,24 @@ body {
   padding: 20px;
 }
 
+.results {
+  background-color: #fff; /* Fondo claro para el contenedor de resultados */
+  color: #333; /* Texto oscuro */
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  width: 70%; /* Ancho del 70% */
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.results .button-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px; /* Separación de 10px entre botones */
+  margin-bottom: 20px;
+}
+
 .login {
   background-color: #fff; /* Fondo claro para el formulario */
   color: #333; /* Texto oscuro */
@@ -101,13 +119,12 @@ button {
   color: white;
 }
 
-.button-green {
-  background-color: #28a745;
-  color: white;
+button:hover {
+  background-color: #1f1a6e;
 }
 
-.button-green:hover {
-  background-color: #218838;
+.button-red {
+  background-color: #dc3545;
 }
 
 .results {
@@ -126,4 +143,29 @@ button {
   justify-content: flex-end;
   gap: 10px; /* Separación de 10px entre botones */
   margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  text-align: left;
+}
+
+th, td {
+  padding: 12px;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #444; /* Fondo oscuro para los encabezados de la tabla */
+  color: #fff; /* Texto claro */
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9; /* Fondo claro para las filas pares */
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #fff; /* Fondo blanco para las filas impares */
 }

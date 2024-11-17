@@ -43,12 +43,14 @@ export const Results = () => {
       <Header />
       <div className="container">
         <div className="results">
+        <div className="button-container">
           <button onClick={() => navigate("/create-destination")}>
             Crear Destino
           </button>
           <button onClick={() => navigate("/other-destination")}>
             Ver Otros Destino
           </button>
+          </div>
           <h1>Destinos Creados</h1>
           <table>
             <thead>
@@ -81,7 +83,7 @@ export const Results = () => {
                         >
                           Editar
                         </button>
-                        <button onClick={() => handleDelete(location.id)}>
+                        <button className="button-red" onClick={() => handleDelete(location.id)}>
                           Eliminar
                         </button>
                       </td>

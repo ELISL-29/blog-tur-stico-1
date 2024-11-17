@@ -72,10 +72,10 @@ export const CreateDestination = () => {
               onChange={(e) => setRating(e.target.value)}
               required
               min="1"
-              max="5"
+              max="10"
             />
           </div>
-          <button type="button" className="button-green">Crear Destino</button>
+          <button type="button">Crear Destino</button>
         </form>
       </div>
     </>
