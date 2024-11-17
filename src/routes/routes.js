@@ -4,6 +4,8 @@ import { Results } from "../components/Results";
 import { Register } from "../components/Register";
 import { CreateDestination } from "../components/CreateDestination";
 import { EditDestination } from "../components/EditDestination";
+import {OtherDestinations} from "../components/OtherDestinations";
+
 
 export const router = createBrowserRouter([
   {
@@ -25,6 +27,10 @@ export const router = createBrowserRouter([
   {
     path: '/edit-destination/:id',
     Component: EditDestination
+  },
+  {
+    path: '/other-destination',
+    Component: OtherDestinations
   }
 
 ]);

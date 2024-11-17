@@ -39,6 +39,10 @@ export const Results = () => {
         <button className="create-blog-button" onClick={() => navigate('/create-destination')}>
           Crear Destino
         </button>
+        <button className="create-blog-button" onClick={() => navigate('/other-destination')}>
+          Ver Otros Destino
+        </button>
+        <h1>Destinos Creados</h1>
         <table>
           <thead>
             <tr>

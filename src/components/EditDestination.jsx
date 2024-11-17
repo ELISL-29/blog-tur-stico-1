@@ -9,7 +9,6 @@ export const EditDestination = () => {
   const [location, setLocation] = useState('');
   const [review, setReview] = useState('');
   const [rating, setRating] = useState('');
-  const [image, setImage] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -21,7 +20,6 @@ export const EditDestination = () => {
         setLocation(destination.location);
         setReview(destination.review);
         setRating(destination.rating);
-        setImage(destination.image);
       } catch (error) {
         console.error('Error consultando los destinos:', error);
       }
@@ -85,16 +83,6 @@ export const EditDestination = () => {
             required
             min="1"
             max="5"
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="image">Imagen</label>
-          <input
-            type="text"
-            id="image"
-            value={image}
-            onChange={(e) => setImage(e.target.value)}
-            required
           />
         </div>
         <button type="submit">Actualizar Destino</button>

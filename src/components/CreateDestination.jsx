@@ -69,7 +69,7 @@ export const CreateDestination = () => {
             max="5"
           />
         </div>
-        <button type="submit">Crear Blog</button>
+        <button type="submit">Crear Destino</button>
       </form>
     </div>
   );
