@@ -17,13 +17,20 @@ body {
   background-color: #333; /* Fondo oscuro para el encabezado */
   color: #fff; /* Texto claro */
   padding: 20px;
-  text-align: center;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  position: relative;
 }
 
-.logout-button {
+.header h1 {
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.logout-link {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -31,9 +38,12 @@ body {
   color: white;
   font-size: 16px;
   cursor: pointer;
+  position: absolute;
+  right: 20px;
+  text-decoration: none;
 }
 
-.logout-button:hover {
+.logout-link:hover {
   background-color: #c82333;
 }
 
@@ -42,79 +52,78 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 20px;
 }
 
-.results {
-  background-color: #333; /* Fondo oscuro para el contenedor de resultados */
-  color: #fff; /* Texto claro */
+.login {
+  background-color: #fff; /* Fondo claro para el formulario */
+  color: #333; /* Texto oscuro */
   border-radius: 10px;
   padding: 30px;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 800px;
+  max-width: 400px;
+  border: 1px solid #ccc; /* Borde del formulario */
 }
 
-.create-blog-button,
-.view-other-destinations-button {
+h1 {
+  text-align: center;
   margin-bottom: 20px;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  background-color: #007bff;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
 }
 
-.create-blog-button:hover,
-.view-other-destinations-button:hover {
-  background-color: #0056b3;
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
 }
 
-table {
+.form-group label {
+  margin-bottom: 5px;
+}
+
+.form-group input {
   width: 100%;
-  border-collapse: collapse;
-  margin: 20px 0;
-}
-
-th, td {
-  padding: 12px;
-  border: 1px solid #ddd;
-  text-align: left;
-}
-
-th {
-  background-color: #444; /* Fondo oscuro para los encabezados de la tabla */
-}
-
-tbody tr:nth-child(even) {
-  background-color: #555; /* Fondo oscuro para las filas pares */
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid #ccc;
 }
 
 button {
-  margin-right: 10px;
-  padding: 5px 10px;
+  width: 100%;
+  padding: 10px;
   border: none;
   border-radius: 5px;
-  background-color: #007bff;
-  color: white;
-  font-size: 14px;
+  font-size: 16px;
   cursor: pointer;
+  margin-top: 10px;
+  background-color: #3128a7;
+  color: white;
 }
 
-button:hover {
-  background-color: #0056b3;
+.button-green {
+  background-color: #28a745;
+  color: white;
 }
 
-button:last-child {
-  background-color: #dc3545;
+.button-green:hover {
+  background-color: #218838;
 }
 
-button:last-child:hover {
-  background-color: #c82333;
+.results {
+  background-color: #fff; /* Fondo claro para el contenedor de resultados */
+  color: #333; /* Texto oscuro */
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  width: 70%; /* Ancho del 70% */
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.empty-row {
-  text-align: center;
-  color: #999;
+.results .button-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px; /* Separación de 10px entre botones */
+  margin-bottom: 20px;
 }

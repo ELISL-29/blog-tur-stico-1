@@ -24,7 +24,7 @@ export const Register = () => {
   return (
     <div className="container">
       <form onSubmit={handleRegister}>
-        <h1>Registro</h1>
+        <h1>Registro de Usuario</h1>
         <div className="form-group">
           <label htmlFor="name">Nombre</label>
           <input

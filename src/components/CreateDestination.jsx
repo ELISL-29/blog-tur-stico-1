@@ -75,7 +75,7 @@ export const CreateDestination = () => {
               max="5"
             />
           </div>
-          <button type="submit">Crear Destino</button>
+          <button type="button" className="button-green">Crear Destino</button>
         </form>
       </div>
     </>

@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import '../styles/styles.css';
 
 export const Header = () => {
@@ -11,8 +11,8 @@ export const Header = () => {
 
   return (
     <header className="header">
-      <h1>Journeys that leave footprints</h1>
-      <button className="logout-button" onClick={handleLogout}>Cerrar Sesión</button>
+      <h1>Journeys That Leave Footprints</h1>
+      <Link to="/" className="logout-link" onClick={handleLogout}>Cerrar Sesión</Link>
     </header>
   );
 }
