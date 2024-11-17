@@ -1,24 +1,27 @@
-import { useState } from 'react';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
-import '../styles/styles.css';
+import { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import "../styles/styles.css";
 
 export const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('https://673a385d339a4ce44517975b.mockapi.io/users', { email, password });
+      const response = await axios.post(
+        "https://673a385d339a4ce44517975b.mockapi.io/users",
+        { email, password }
+      );
       const user = response.data;
-      localStorage.setItem('user', JSON.stringify(user));
-      alert('Inicio de sesión exitoso');
-      navigate('/results'); // Redireccionar a la página de resultados
+      localStorage.setItem("user", JSON.stringify(user));
+      alert("Inicio de sesión exitoso");
+      navigate("/results"); // Redireccionar a la página de resultados
     } catch (error) {
-      console.error('Error iniciando sesión:', error);
-      alert('Error iniciando sesión');
+      console.error("Error iniciando sesión:", error);
+      alert("Error iniciando sesión");
     }
   };
 
@@ -47,7 +50,9 @@ export const Login = () => {
           />
         </div>
         <button type="submit">Iniciar Sesión</button>
-        <button type="button" onClick={() => navigate('/register')}>Registrarse</button>
+        <button type="button" onClick={() => navigate("/register")}>
+          Registrarse
+        </button>
       </form>
     </div>
   );

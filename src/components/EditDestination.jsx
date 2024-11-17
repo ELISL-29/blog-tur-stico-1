@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 import '../styles/styles.css';
+import { Header } from './Header';
+
 
 export const EditDestination = () => {
   const { id } = useParams();
@@ -41,6 +43,8 @@ export const EditDestination = () => {
   };
 
   return (
+    <>
+    <Header />
     <div className="container">
       <form onSubmit={handleEditDestination}>
         <h1>Editar Destino Turístico</h1>
@@ -88,5 +92,6 @@ export const EditDestination = () => {
         <button type="submit">Actualizar Destino</button>
       </form>
     </div>
+    </>
   );
 };
