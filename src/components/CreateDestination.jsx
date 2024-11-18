@@ -1,30 +1,26 @@
-import { useState } from "react";
-import axios from "axios";
-import "../styles/styles.css";
+import { useState } from 'react';
+import axios from 'axios';
+import '../styles/styles.css';
+import { Header } from './Header';
 import { useNavigate } from "react-router-dom";
-import { Header } from "./Header";
 
 export const CreateDestination = () => {
-  const [name, setName] = useState("");
-  const [location, setLocation] = useState("");
-  const [review, setReview] = useState("");
-  const [rating, setRating] = useState("");
-
+  const [name, setName] = useState('');
+  const [location, setLocation] = useState('');
+  const [review, setReview] = useState('');
+  const [rating, setRating] = useState('');
   const navigate = useNavigate();
 
   const handleCreateDestination = async (e) => {
     e.preventDefault();
-    const user = JSON.parse(localStorage.getItem("user"));
+    const user = JSON.parse(localStorage.getItem('user')); // Obtener el usuario de la sesión
     try {
-      await axios.post(
-        "https://673a385d339a4ce44517975b.mockapi.io/destinations",
-        { name, location, review, rating, userId: user.id }
-      );
-      alert("Destino creado exitosamente");
+      await axios.post('https://673a385d339a4ce44517975b.mockapi.io/destinations', { name, location, review, rating, userId: user.id });
+      alert('Destino creado exitosamente');
       navigate("/Results");
     } catch (error) {
-      console.error("Error creando el Destino:", error);
-      alert("Error creando el Destino");
+      console.error('Error creando el destino:', error);
+      alert('Error creando el destino');
     }
   };
 
@@ -72,12 +68,12 @@ export const CreateDestination = () => {
               onChange={(e) => setRating(e.target.value)}
               required
               min="1"
-              max="10"
+              max="5"
             />
           </div>
-          <button type="button">Crear Destino</button>
+          <button type="submit">Crear Destino</button>
         </form>
       </div>
     </>
   );
-};
+}

@@ -28,7 +28,7 @@ export const Results = () => {
   const handleDelete = async (id) => {
     try {
       await axios.delete(
-        `https://673271fc2a1b1a4ae10ff8cd.mockapi.io/destinations/${id}`
+        `https://673a385d339a4ce44517975b.mockapi.io/destinations/${id}`
       );
       setLocations(locations.filter((location) => location.id !== id));
       alert("Destino eliminado exitosamente");

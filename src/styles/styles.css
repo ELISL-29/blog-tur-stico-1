@@ -61,9 +61,11 @@ body {
   border-radius: 10px;
   padding: 30px;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
-  width: 70%; /* Ancho del 70% */
-  max-width: 800px;
+  width: 100%;
+  max-width: 900px;
+  max-height: 80%;
   margin: 0 auto;
+  overflow-x: auto; /* Agregar scroll horizontal si es necesario */
 }
 
 .results .button-container {
@@ -125,24 +127,6 @@ button:hover {
 
 .button-red {
   background-color: #dc3545;
-}
-
-.results {
-  background-color: #fff; /* Fondo claro para el contenedor de resultados */
-  color: #333; /* Texto oscuro */
-  border-radius: 10px;
-  padding: 30px;
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
-  width: 70%; /* Ancho del 70% */
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.results .button-container {
-  display: flex;
-  justify-content: flex-end;
-  gap: 10px; /* Separación de 10px entre botones */
-  margin-bottom: 20px;
 }
 
 table {

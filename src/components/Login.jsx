@@ -12,14 +12,16 @@ export const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.get(
-        "https://673a385d339a4ce44517975b.mockapi.io/users",
-        { email, password }
-      );
-      const user = response.data;
-      localStorage.setItem("user", JSON.stringify(user));
-      alert("Inicio de sesión exitoso");
-      navigate("/results"); // Redireccionar a la página de resultados
+      const response = await axios.get("https://673a385d339a4ce44517975b.mockapi.io/users");
+      const users = response.data;
+      const user = users.find(user => user.email === email && user.password === password);
+
+      if (user) {
+        localStorage.setItem("user", JSON.stringify(user));
+        navigate("/results"); // Redireccionar a la página de resultados
+      } else {
+        alert("Credenciales inválidas");
+      }
     } catch (error) {
       console.error("Error iniciando sesión:", error);
       alert("Error iniciando sesión");
@@ -62,4 +64,4 @@ export const Login = () => {
       </div>
     </>
   );
-};
+}

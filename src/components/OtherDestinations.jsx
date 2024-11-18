@@ -53,9 +53,7 @@ export const OtherDestinations = () => {
               {locations.length === 0
                 ? Array.from({ length: 5 }).map((_, index) => (
                     <tr key={index}>
-                      <td colSpan="5" className="empty-row">
-                        No hay registros
-                      </td>
+                      <td colSpan="5" className="empty-row"></td>
                     </tr>
                   ))
                 : locations.map((location) => (

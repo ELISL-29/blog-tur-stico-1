@@ -33,7 +33,7 @@ export const EditDestination = () => {
   const handleEditDestination = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`https://673a385d339a4ce44517975b.mockapi.io/destinations/${id}`, { name, location, review, rating, image });
+      await axios.put(`https://673a385d339a4ce44517975b.mockapi.io/destinations/${id}`, { name, location, review, rating });
       alert('Destino actualizado exitosamente');
       navigate('/results');
     } catch (error) {
